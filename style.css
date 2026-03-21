@@ -1,0 +1,203 @@
+:root {
+    --primary-pink: #ffd1dc;
+    --soft-pink: #fff0f5;
+    --dark-pink: #ffb6c1;
+    --accent-pink: #ff69b4;
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--soft-pink);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flowery Decor Backgrounds using SVGs */
+.flower-decor {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffb6c1' opacity='0.5' d='M256,112.5c-20.9-46.1-66.2-76.8-115.1-69.6C95.2,50,64,90.2,64,136.9c0,50.1,64,119.1,192,279.1 c128-160,192-229,192-279.1c0-46.7-31.2-86.9-76.9-94C322.2,35.7,276.9,66.4,256,112.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.flower-decor-bottom {
+    position: absolute;
+    bottom: -100px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffd1dc' opacity='0.7' d='M256,512C114.6,512,0,397.4,0,256S114.6,0,256,0s256,114.6,256,256S397.4,512,256,512z'/%3E%3Cpath fill='%23ff69b4' d='M256,112.5c-20.9-46.1-66.2-76.8-115.1-69.6C95.2,50,64,90.2,64,136.9c0,50.1,64,119.1,192,279.1 c128-160,192-229,192-279.1c0-46.7-31.2-86.9-76.9-94C322.2,35.7,276.9,66.4,256,112.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: rotate(-15deg);
+}
+
+header {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--black);
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-pink);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+section {
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2::after {
+    content: '✿';
+    display: block;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+    margin-top: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--soft-pink);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.1);
+    border-color: var(--accent-pink);
+}
+
+.product-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-icon {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.contact-card {
+    background: var(--white);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--soft-pink);
+}
+
+.contact-card a {
+    color: var(--accent-pink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--dark-pink);
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--black);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    .flower-decor, .flower-decor-bottom {
+        display: none;
+    }
+}
